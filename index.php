@@ -30,7 +30,7 @@ function parseCity($city) {
                 'discount' => str_replace('-', '', mb_substr($item->find('div.aa_st_img')->plaintext, 0, 3)),
                 'title'    => $item->find('div.aa_std_name')->plaintext,
                 'price'    => $item->find('div.aa_st_buyblock')->find('div', 0)->find('span', 0)->plaintext,
-                'link'     => $item->find('div.aa_std_name')->find('a', 0)->href,
+                'link'     => sprintf("https://mechta.kz/%s", $item->find('div.aa_std_name')->find('a', 0)->href),
             ];
         }
 
